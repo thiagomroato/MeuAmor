@@ -9,12 +9,12 @@
 
 <style>
 
-/* 🌙 FUNDO ESCURO PREMIUM */
 body{
 font-family:'Poppins',sans-serif;
 background:linear-gradient(135deg,#0b0b10,#1a0f13,#2a0f1f,#3a1226);
 color:#fff;
 overflow-x:hidden;
+margin:0;
 }
 
 /* INTRO */
@@ -49,17 +49,7 @@ font-weight:700;
 transition:.3s;
 }
 
-.enter-btn:hover{
-transform:scale(1.05);
-}
-
-/* GLASS */
-.glass{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.15);
-border-radius:28px;
-}
+.enter-btn:hover{transform:scale(1.05);}
 
 /* HERO */
 .hero{
@@ -67,13 +57,16 @@ min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-padding:30px;
 text-align:center;
+padding:30px;
 }
 
 .hero-card{
 max-width:900px;
 padding:60px 40px;
+background:rgba(255,255,255,.08);
+border-radius:28px;
+backdrop-filter:blur(18px);
 }
 
 .hero h1{
@@ -81,33 +74,25 @@ font-family:'Playfair Display',serif;
 font-size:clamp(3rem,8vw,6rem);
 }
 
-.hero h2{
-margin:15px 0;
-font-weight:400;
-}
-
 .counter{
 margin-top:25px;
 font-size:1.3rem;
-font-weight:700;
 color:#ff7aa2;
+font-weight:700;
 }
 
 /* SEÇÕES */
 .section{
-max-width:1200px;
+max-width:1100px;
 margin:auto;
-padding:100px 20px;
+padding:90px 20px;
+line-height:2;
 }
 
-.section-title{
-text-align:center;
-margin-bottom:40px;
-}
-
-.section-title h2{
+h2{
 font-family:'Playfair Display',serif;
-font-size:clamp(2rem,5vw,3rem);
+text-align:center;
+margin-bottom:25px;
 }
 
 /* CARDS */
@@ -120,83 +105,33 @@ gap:20px;
 .card{
 padding:25px;
 text-align:center;
-transition:.3s;
+background:rgba(255,255,255,.08);
+border-radius:20px;
 }
 
-.card:hover{
-transform:translateY(-8px);
-}
-
-/* 📸 GALERIA PREMIUM */
+/* GALERIA */
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
 gap:24px;
-align-items:stretch;
 }
 
 .photo-frame{
-position:relative;
-aspect-ratio:3 / 4;
+aspect-ratio:3/4;
 border-radius:26px;
 overflow:hidden;
-
-background:rgba(255,255,255,0.06);
-box-shadow:0 15px 35px rgba(0,0,0,0.45);
-
-transition:all .4s ease;
+background:rgba(255,255,255,.06);
+transition:.4s;
 }
 
 .photo-frame:hover{
 transform:translateY(-10px) scale(1.02);
-box-shadow:0 20px 45px rgba(0,0,0,0.6);
 }
 
 .photo-frame img{
 width:100%;
 height:100%;
 object-fit:cover;
-object-position:center;
-transition:transform .6s ease;
-filter:saturate(1.05) contrast(1.05);
-}
-
-.photo-frame:hover img{
-transform:scale(1.08);
-}
-
-/* brilho romântico */
-.photo-frame::after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(to top, rgba(0,0,0,0.35), transparent 60%);
-pointer-events:none;
-}
-
-/* borda glow */
-.photo-frame::before{
-content:"";
-position:absolute;
-inset:0;
-border-radius:26px;
-padding:1px;
-background:linear-gradient(135deg,rgba(255,77,136,0.4),transparent);
-mask:linear-gradient(#000,#000) content-box, linear-gradient(#000,#000);
-mask-composite:exclude;
-pointer-events:none;
-}
-
-/* FINAL */
-.final{
-text-align:center;
-line-height:2;
-}
-
-.signature{
-margin-top:25px;
-font-size:1.2rem;
-font-weight:600;
 }
 
 /* CORAÇÕES */
@@ -221,7 +156,7 @@ animation:fall linear forwards;
 footer{
 text-align:center;
 padding:50px;
-opacity:0.7;
+opacity:.7;
 }
 
 </style>
@@ -244,91 +179,157 @@ opacity:0.7;
 <!-- CORAÇÕES -->
 <div class="hearts" id="hearts"></div>
 
-<!-- HERO -->
+<!-- TEXTO PRINCIPAL -->
 <section class="hero">
-<div class="glass hero-card">
+<div class="hero-card">
 
 <h1>Maria Eliana ❤️</h1>
-<h2>Para o amor da minha vida</h2>
-
-<p>
-Desde que você entrou na minha vida,
-tudo ganhou mais sentido ❤️
-</p>
+<p>Para o amor da minha vida</p>
 
 <div id="counter" class="counter"></div>
 
 </div>
 </section>
 
-<!-- HISTÓRIA -->
 <section class="section">
-<div class="section-title">
-<h2>O Início de Tudo</h2>
-</div>
 
-<div class="glass" style="padding:30px; line-height:2;">
-Em 2022, nossos caminhos se cruzaram na Procter & Gamble em Manaus.<br><br>
-Entre conversas e momentos simples, nasceu algo especial ❤️
-</div>
+<h2>Feliz Dia dos Namorados</h2>
+
+<p>
+Maria Eliana<br>
+Para o amor da minha vida<br><br>
+
+Desde que você entrou na minha vida, os dias ganharam mais cor,
+mais sentido e muito mais felicidade. Hoje quero celebrar nossa história.
+</p>
+
 </section>
 
-<!-- AMOR -->
 <section class="section">
-<div class="section-title">
-<h2>Coisas que Amo em Você ❤️</h2>
-</div>
+
+<h2>Como tudo começou</h2>
+
+<p><b>O início de tudo</b><br>
+Em 2022, nossos caminhos se cruzaram na Procter & Gamble, em Manaus.
+</p>
+
+<p>
+Naquela época, talvez nenhum de nós imaginasse que uma simples convivência
+profissional se transformaria em uma das histórias mais bonitas das nossas vidas.
+</p>
+
+<p>
+Entre conversas, sorrisos, desafios do dia a dia e momentos compartilhados,
+fomos nos conhecendo melhor. Aos poucos nasceu uma amizade especial
+que cresceu e se transformou em amor.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Nossa história de amor</h2>
+
+<p>
+O que mais gosto na nossa história é que ela foi construída de forma verdadeira.
+Não foi apenas um encontro de duas pessoas — foi o encontro de duas almas.
+</p>
+
+<p><b>Com você aprendi que felicidade está nas pequenas coisas:</b></p>
+
+<p>✦ Nas conversas sem hora para acabar</p>
+<p>✦ Nas risadas por motivos bobos</p>
+<p>✦ Nos planos para o futuro</p>
+<p>✦ Nos abraços que resolvem tudo</p>
+
+</section>
+
+<section class="section">
+
+<h2>💍 30 de maio de 2024</h2>
+
+<p>
+Demos um dos passos mais importantes das nossas vidas. Nos tornamos marido e mulher.
+</p>
+
+<p>
+Foi o dia em que confirmamos aquilo que já sabíamos: queríamos caminhar juntos.
+</p>
+
+<p>
+E desde então, cada dia ao seu lado confirma a melhor escolha da minha vida.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Algumas coisas que amo em você</h2>
 
 <div class="cards">
-<div class="glass card">Seu sorriso</div>
-<div class="glass card">Seu carinho</div>
-<div class="glass card">Sua força</div>
-<div class="glass card">Sua alegria</div>
-<div class="glass card">Sua inteligência</div>
-<div class="glass card">Seu coração</div>
+<div class="card">❤️ Seu sorriso</div>
+<div class="card">❤️ Seu carinho</div>
+<div class="card">❤️ Sua força</div>
+<div class="card">❤️ Sua alegria</div>
+<div class="card">❤️ Sua inteligência</div>
+<div class="card">❤️ Seu coração</div>
 </div>
+
 </section>
 
-<!-- GALERIA -->
 <section class="section">
-<div class="section-title">
-<h2>Nossas Memórias 📸</h2>
-</div>
+
+<h2>Nossa parte divertida</h2>
+
+<p>
+Quem diria que aqueles dois colegas da P&G acabariam casando?
+</p>
+
+<p>
+Se alguém contasse isso em 2022, pareceria uma comédia romântica.
+</p>
+
+<p>
+Mas aqui estamos nós. E eu não mudaria nada.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Nossas memórias 📸</h2>
 
 <div class="gallery">
 
-<div class="glass photo-frame">
-<img src="foto1.jpeg" alt="foto1">
-</div>
-
-<div class="glass photo-frame">
-<img src="foto2.jpeg" alt="foto2">
-</div>
-
-<div class="glass photo-frame">
-<img src="foto3.jpeg" alt="foto3">
-</div>
-
-<div class="glass photo-frame">
-<img src="foto4.jpeg" alt="foto4">
-</div>
+<div class="photo-frame"><img src="foto1.jpeg"></div>
+<div class="photo-frame"><img src="foto2.jpeg"></div>
+<div class="photo-frame"><img src="foto3.jpeg"></div>
+<div class="photo-frame"><img src="foto4.jpeg"></div>
 
 </div>
+
 </section>
 
-<!-- FINAL -->
 <section class="section">
-<div class="glass final" style="padding:40px;">
-<h2>Para Sempre ❤️</h2>
 
-<p>Maria Eliana, você é meu amor ❤️</p>
-<p>Hoje e sempre, escolho você.</p>
+<h2>Meu amor por você</h2>
 
-<div class="signature">
-— Seu marido, Thiago Morato
-</div>
+<p>
+Maria Eliana, você é minha companheira, minha melhor amiga e meu lugar seguro.
+</p>
 
-</div>
+<p>
+Obrigado por cada sorriso, cada sonho e cada momento juntos.
+</p>
+
+<p>
+Hoje e sempre, escolho você. Mil vezes.
+</p>
+
+<p><b>Para sempre ❤️</b></p>
+
+<p>— Seu marido, Thiago Morato</p>
+
 </section>
 
 <footer>
@@ -337,7 +338,7 @@ Feito com amor ❤️
 
 <script>
 
-/* iniciar */
+/* entrar */
 function start(){
 document.getElementById('intro').style.display='none';
 document.getElementById('music').play().catch(()=>{});
@@ -345,25 +346,20 @@ document.getElementById('music').play().catch(()=>{});
 
 /* contador */
 const startDate=new Date('2024-05-30');
-const now=new Date();
-const diff=now-startDate;
-const days=Math.floor(diff/(1000*60*60*24));
+const days=Math.floor((new Date()-startDate)/86400000);
 
 document.getElementById('counter').innerHTML=
 `Juntos há ${days} dias ❤️`;
 
 /* corações */
 setInterval(()=>{
-const heart=document.createElement('div');
-heart.className='heart';
-heart.innerHTML='❤️';
-heart.style.left=Math.random()*100+'%';
-heart.style.fontSize=(15+Math.random()*25)+'px';
-heart.style.animationDuration=(6+Math.random()*6)+'s';
-
-document.getElementById('hearts').appendChild(heart);
-
-setTimeout(()=>heart.remove(),12000);
+const h=document.createElement('div');
+h.className='heart';
+h.innerHTML='❤️';
+h.style.left=Math.random()*100+'%';
+h.style.animationDuration=(5+Math.random()*6)+'s';
+document.getElementById('hearts').appendChild(h);
+setTimeout(()=>h.remove(),12000);
 },250);
 
 </script>
