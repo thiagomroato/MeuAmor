@@ -35,17 +35,22 @@ padding:20px;
 #intro h1{
 font-family:'Playfair Display',serif;
 font-size:clamp(2.5rem,6vw,5rem);
+margin-bottom:20px;
 }
 
 .enter-btn{
-margin-top:20px;
-padding:15px 35px;
 border:none;
+padding:18px 40px;
 border-radius:999px;
 background:#fff;
 color:#d6336c;
 font-weight:700;
 cursor:pointer;
+transition:.3s;
+}
+
+.enter-btn:hover{
+transform:scale(1.05);
 }
 
 /* HERO */
@@ -73,9 +78,9 @@ font-size:clamp(2.5rem,6vw,5rem);
 
 .counter{
 margin-top:20px;
+font-size:1.3rem;
 color:#ff7aa2;
 font-weight:700;
-font-size:1.2rem;
 }
 
 /* SEÇÕES */
@@ -89,10 +94,10 @@ line-height:2;
 h2{
 font-family:'Playfair Display',serif;
 text-align:center;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
-/* 📌 GRID CARDS */
+/* GRID CARDS */
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -113,7 +118,7 @@ transform:translateY(-8px);
 background:rgba(255,255,255,0.12);
 }
 
-/* 📸 GRID FOTOS (CORRETO AGORA) */
+/* GRID FOTOS */
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -180,12 +185,13 @@ opacity:.7;
 <!-- INTRO -->
 <div id="intro">
 <h1>❤️ Feliz Dia dos Namorados ❤️</h1>
+<p>Toque em entrar para viver nossa história</p>
 <button class="enter-btn" onclick="start()">Entrar</button>
 </div>
 
-<!-- ÁUDIO -->
+<!-- ÁUDIO (CORRIGIDO) -->
 <audio id="music" loop>
-<source src="musica.mp3" type="audio/mpeg">
+<source src="allofme.mp3" type="audio/mpeg">
 </audio>
 
 <!-- CORAÇÕES -->
@@ -203,7 +209,7 @@ opacity:.7;
 </div>
 </section>
 
-<!-- ❤️ TEXTO COMPLETO -->
+<!-- TEXTO COMPLETO -->
 <section class="section">
 
 <h2>Feliz Dia dos Namorados</h2>
@@ -223,16 +229,16 @@ Desde que você entrou na minha vida, os dias ganharam mais cor, mais sentido e 
 
 <h2>Como tudo começou</h2>
 
-<p><b>O início de tudo</b><br>
+<p>
 Em 2022, nossos caminhos se cruzaram na Procter & Gamble, em Manaus.
 </p>
 
 <p>
-Naquela época, talvez nenhum de nós imaginasse que uma simples convivência profissional se transformaria em uma das histórias mais bonitas das nossas vidas.
+Naquela época, talvez nenhum de nós imaginasse que uma simples convivência profissional se transformaria em uma linda história de amor.
 </p>
 
 <p>
-Entre conversas, sorrisos, desafios do dia a dia e momentos compartilhados, fomos nos conhecendo melhor. Aos poucos, nasceu uma amizade especial que cresceu, amadureceu e se transformou em amor.
+Entre conversas, sorrisos e momentos compartilhados, nasceu algo especial.
 </p>
 
 </section>
@@ -242,15 +248,13 @@ Entre conversas, sorrisos, desafios do dia a dia e momentos compartilhados, fomo
 <h2>Nossa história de amor</h2>
 
 <p>
-O que mais gosto na nossa história é que ela foi construída de forma verdadeira.
+Construímos algo verdadeiro, leve e cheio de significado.
 </p>
 
-<p><b>Com você aprendi:</b></p>
-
-<p>✦ Nas conversas sem hora para acabar</p>
-<p>✦ Nas risadas por motivos bobos</p>
-<p>✦ Nos planos para o futuro</p>
-<p>✦ Nos momentos em que um abraço resolve tudo</p>
+<p>✦ Conversas sem hora para acabar</p>
+<p>✦ Risadas espontâneas</p>
+<p>✦ Planos para o futuro</p>
+<p>✦ Abraços que resolvem tudo</p>
 
 </section>
 
@@ -259,23 +263,19 @@ O que mais gosto na nossa história é que ela foi construída de forma verdadei
 <h2>💍 30 de maio de 2024</h2>
 
 <p>
-Demos um dos passos mais importantes das nossas vidas. Nos tornamos marido e mulher.
+Foi o dia em que nos tornamos marido e mulher.
 </p>
 
 <p>
-Foi o dia em que confirmamos diante do mundo aquilo que nossos corações já sabiam.
-</p>
-
-<p>
-E desde então, cada dia ao seu lado confirma a melhor escolha da minha vida.
+E desde então, cada dia confirma a melhor escolha da minha vida.
 </p>
 
 </section>
 
-<!-- 📌 GRID CARDS -->
+<!-- GRID CARDS -->
 <section class="section">
 
-<h2>Algumas coisas que amo em você</h2>
+<h2>Coisas que amo em você ❤️</h2>
 
 <div class="cards">
 
@@ -287,7 +287,6 @@ E desde então, cada dia ao seu lado confirma a melhor escolha da minha vida.
 <div class="card">❤️ Seu coração</div>
 
 </div>
-
 </section>
 
 <section class="section">
@@ -295,20 +294,20 @@ E desde então, cada dia ao seu lado confirma a melhor escolha da minha vida.
 <h2>Nossa parte divertida</h2>
 
 <p>
-Quem diria que aqueles dois colegas da P&G acabariam se tornando marido e mulher?
+Quem diria que dois colegas da P&G acabariam juntos assim?
 </p>
 
 <p>
-Se alguém tivesse contado essa história em 2022, pareceria uma comédia romântica.
+Se alguém contasse isso em 2022, pareceria uma comédia romântica.
 </p>
 
 <p>
-Mas aqui estamos nós. E eu não mudaria absolutamente nada.
+Mas aqui estamos nós ❤️
 </p>
 
 </section>
 
-<!-- 📸 GRID FOTOS -->
+<!-- GRID FOTOS -->
 <section class="section">
 
 <h2>Nossas memórias 📸</h2>
@@ -333,11 +332,11 @@ Maria Eliana, você é minha companheira, minha melhor amiga e meu lugar seguro.
 </p>
 
 <p>
-Obrigado por cada momento, cada sorriso e cada sonho.
+Obrigado por tudo ❤️
 </p>
 
 <p>
-Hoje, amanhã e sempre: escolho você.
+Hoje e sempre: escolho você.
 </p>
 
 <p><b>Para sempre ❤️</b></p>
@@ -352,16 +351,23 @@ Feito com amor ❤️
 
 <script>
 
+/* iniciar música */
 function start(){
 document.getElementById('intro').style.display='none';
-document.getElementById('music').play().catch(()=>{});
+
+const music=document.getElementById('music');
+music.volume=0.7;
+music.play().catch(()=>{});
 }
 
+/* contador */
 const startDate=new Date('2024-05-30');
 const days=Math.floor((new Date()-startDate)/86400000);
+
 document.getElementById('counter').innerHTML=
 `Juntos há ${days} dias ❤️`;
 
+/* corações */
 setInterval(()=>{
 const h=document.createElement('div');
 h.className='heart';
