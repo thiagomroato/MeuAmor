@@ -185,12 +185,12 @@ opacity:.7;
 <!-- INTRO -->
 <div id="intro">
 <h1>❤️ Feliz Dia dos Namorados ❤️</h1>
-<p>Toque em entrar para viver nossa história</p>
+<p>Toque para começar nossa história</p>
 <button class="enter-btn" onclick="start()">Entrar</button>
 </div>
 
-<!-- ÁUDIO (CORRIGIDO) -->
-<audio id="music" loop>
+<!-- ÁUDIO -->
+<audio id="music" loop preload="auto">
 <source src="allofme.mp3" type="audio/mpeg">
 </audio>
 
@@ -234,11 +234,7 @@ Em 2022, nossos caminhos se cruzaram na Procter & Gamble, em Manaus.
 </p>
 
 <p>
-Naquela época, talvez nenhum de nós imaginasse que uma simples convivência profissional se transformaria em uma linda história de amor.
-</p>
-
-<p>
-Entre conversas, sorrisos e momentos compartilhados, nasceu algo especial.
+Entre conversas e momentos simples, nasceu uma linda história de amor.
 </p>
 
 </section>
@@ -246,10 +242,6 @@ Entre conversas, sorrisos e momentos compartilhados, nasceu algo especial.
 <section class="section">
 
 <h2>Nossa história de amor</h2>
-
-<p>
-Construímos algo verdadeiro, leve e cheio de significado.
-</p>
 
 <p>✦ Conversas sem hora para acabar</p>
 <p>✦ Risadas espontâneas</p>
@@ -263,7 +255,7 @@ Construímos algo verdadeiro, leve e cheio de significado.
 <h2>💍 30 de maio de 2024</h2>
 
 <p>
-Foi o dia em que nos tornamos marido e mulher.
+Nos tornamos marido e mulher.
 </p>
 
 <p>
@@ -287,6 +279,7 @@ E desde então, cada dia confirma a melhor escolha da minha vida.
 <div class="card">❤️ Seu coração</div>
 
 </div>
+
 </section>
 
 <section class="section">
@@ -295,10 +288,6 @@ E desde então, cada dia confirma a melhor escolha da minha vida.
 
 <p>
 Quem diria que dois colegas da P&G acabariam juntos assim?
-</p>
-
-<p>
-Se alguém contasse isso em 2022, pareceria uma comédia romântica.
 </p>
 
 <p>
@@ -332,14 +321,10 @@ Maria Eliana, você é minha companheira, minha melhor amiga e meu lugar seguro.
 </p>
 
 <p>
-Obrigado por tudo ❤️
+Hoje e sempre, escolho você ❤️
 </p>
 
-<p>
-Hoje e sempre: escolho você.
-</p>
-
-<p><b>Para sempre ❤️</b></p>
+<p><b>Para sempre</b></p>
 
 <p>— Seu marido, Thiago Morato</p>
 
@@ -351,12 +336,14 @@ Feito com amor ❤️
 
 <script>
 
-/* iniciar música */
+/* iniciar música sem delay visível */
 function start(){
 document.getElementById('intro').style.display='none';
 
 const music=document.getElementById('music');
-music.volume=0.7;
+music.currentTime = 0;
+music.volume = 0.8;
+
 music.play().catch(()=>{});
 }
 
