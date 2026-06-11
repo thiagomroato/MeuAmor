@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Dia dos Namorados ❤️ | Maria Eliana</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--pink:#ff4d88;
+--pink-light:#ffd6e5;
+--glass:rgba(255,255,255,.15);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffdde1 0%,#ee9ca7 100%);
+color:#fff;
+overflow-x:hidden;
+}
+
+#intro{
+position:fixed;
+inset:0;
+z-index:9999;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#ff5f9e,#ff7eb3);
+padding:20px;
+}
+
+#intro h1{
+font-size:clamp(2.5rem,6vw,5rem);
+font-family:'Playfair Display',serif;
+margin-bottom:20px;
+}
+
+#intro p{
+max-width:700px;
+margin-bottom:30px;
+}
+
+.enter-btn{
+padding:16px 35px;
+border:none;
+border-radius:999px;
+font-size:1rem;
+font-weight:600;
+cursor:pointer;
+background:white;
+color:#d6336c;
+transition:.3s;
+}
+
+.enter-btn:hover{
+transform:scale(1.05);
+}
+
+.glass{
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
+border:1px solid rgba(255,255,255,.2);
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
+text-align:center;
+}
+
+.hero-card{
+max-width:900px;
+padding:50px;
+animation:fadeUp 1.5s ease;
+}
+
+.hero h1{
+font-size:clamp(3rem,8vw,6rem);
+font-family:'Playfair Display',serif;
+margin-bottom:10px;
+}
+
+.hero h2{
+font-size:1.5rem;
+font-weight:400;
+margin-bottom:25px;
+}
+
+.hero p{
+font-size:1.1rem;
+line-height:1.9;
+}
+
+.section{
+padding:100px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-size:clamp(2rem,5vw,3rem);
+font-family:'Playfair Display',serif;
+margin-bottom:10px;
+}
+
+.content{
+padding:35px;
+}
+
+.timeline{
+position:relative;
+padding-left:40px;
+}
+
+.timeline:before{
+content:"";
+position:absolute;
+left:10px;
+top:0;
+width:4px;
+height:100%;
+background:white;
+opacity:.5;
+}
+
+.timeline-item{
+position:relative;
+margin-bottom:40px;
+}
+
+.timeline-item:before{
+content:"❤️";
+position:absolute;
+left:-42px;
+top:0;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+padding:25px;
+text-align:center;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card span{
+display:block;
+font-size:2rem;
+margin-bottom:10px;
+}
+
+.counter{
+font-size:1.3rem;
+margin-top:30px;
+font-weight:600;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.photo{
+height:280px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:1.2rem;
+font-weight:600;
+border-radius:20px;
+background:rgba(255,255,255,.15);
+}
+
+.final{
+text-align:center;
+}
+
+.final p{
+margin-bottom:18px;
+line-height:2;
+}
+
+.signature{
+margin-top:30px;
+font-size:1.2rem;
+font-weight:600;
+}
+
+footer{
+padding:50px;
+text-align:center;
+}
+
+.hearts{
+position:fixed;
+inset:0;
+pointer-events:none;
+overflow:hidden;
+z-index:-1;
+}
+
+.heart{
+position:absolute;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-100px);
+opacity:0;
+}
+10%{
+opacity:1;
+}
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+</style>
+
+</head>
+<body>
+
+<div id="intro">
+<h1>❤️ Feliz Dia dos Namorados ❤️</h1>
+<p>
+Maria Eliana, preparei uma pequena lembrança para celebrar a nossa história.
+</p>
+<button class="enter-btn" onclick="startExperience()">
+Entrar na nossa história
+</button>
+</div>
+
+<audio id="music" autoplay loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="hearts" id="hearts"></div>
+
+<section class="hero">
+<div class="glass hero-card">
+
+<h1>Maria Eliana ❤️</h1>
+
+<h2>Para o amor da minha vida</h2>
+
+<p>
+Desde que você entrou na minha vida, os dias ganharam mais cor,
+mais sentido e muito mais felicidade.
+Hoje quero celebrar nossa história.
+</p>
+
+<div class="counter" id="counter"></div>
+
+</div>
+</section>
+
+<section class="section reveal">
+<div class="section-title">
+<h2>O Início de Tudo</h2>
+<p>2022 • Procter & Gamble • Manaus</p>
+</div>
+
+<div class="glass content timeline">
+
+<div class="timeline-item">
+Em 2022, nossos caminhos se cruzaram na Procter & Gamble, em Manaus.
+</div>
+
+<div class="timeline-item">
+Talvez nenhum de nós imaginasse que uma simples convivência profissional se transformaria em uma das histórias mais bonitas das nossas vidas.
+</div>
+
+<div class="timeline-item">
+Entre conversas, sorrisos, desafios do dia a dia e momentos compartilhados, fomos nos conhecendo melhor.
+</div>
+
+<div class="timeline-item">
+Aos poucos nasceu uma amizade especial que cresceu, amadureceu e se transformou em amor.
+</div>
+
+</div>
+</section>
+
+<section class="section reveal">
+
+<div class="section-title">
+<h2>Nossa História de Amor</h2>
+</div>
+
+<div class="glass content">
+
+<p>
+O que mais gosto na nossa história é que ela foi construída de forma verdadeira.
+Não foi apenas um encontro de duas pessoas — foi o encontro de duas almas que encontraram conforto uma na outra.
+</p>
+
+<br>
+
+<p>✦ Nas conversas sem hora para acabar</p>
+<p>✦ Nas risadas por motivos bobos</p>
+<p>✦ Nos planos para o futuro</p>
+<p>✦ Nos momentos em que um simples abraço resolve tudo</p>
+
+</div>
+
+</section>
+
+<section class="section reveal">
+
+<div class="section-title">
+<h2>💍 Um Dia Inesquecível</h2>
+<p>30 de Maio de 2024</p>
+</div>
+
+<div class="glass content">
+
+<p>
+Nos tornamos marido e mulher.
+</p>
+
+<br>
+
+<p>
+Foi o dia em que confirmamos diante do mundo aquilo que nossos corações já sabiam há muito tempo.
+</p>
+
+<br>
+
+<p>
+Que queríamos caminhar juntos, compartilhar sonhos, vencer desafios e construir uma vida lado a lado.
+</p>
+
+<br>
+
+<p>
+Desde então, cada dia ao seu lado tem sido uma nova confirmação de que fiz a melhor escolha da minha vida.
+</p>
+
+</div>
+
+</section>
+
+<section class="section reveal">
+
+<div class="section-title">
+<h2>Algumas Coisas Que Amo em Você</h2>
+</div>
+
+<div class="cards">
+
+<div class="glass card"><span>❤️</span>Seu sorriso que ilumina qualquer ambiente</div>
+<div class="glass card"><span>❤️</span>Seu jeito carinhoso</div>
+<div class="glass card"><span>❤️</span>Sua força nos momentos difíceis</div>
+<div class="glass card"><span>❤️</span>Sua alegria contagiante</div>
+<div class="glass card"><span>❤️</span>Sua inteligência e determinação</div>
+<div class="glass card"><span>❤️</span>Seu coração generoso</div>
+<div class="glass card"><span>❤️</span>Nossas brincadeiras</div>
+<div class="glass card"><span>❤️</span>Seu apoio em cada desafio</div>
+<div class="glass card"><span>❤️</span>O simples fato de ser você</div>
+
+</div>
+
+</section>
+
+<section class="section reveal">
+
+<div class="section-title">
+<h2>📸 Nossas Memórias</h2>
+<p>Substitua pelos seus arquivos de fotos</p>
+</div>
+
+<div class="gallery">
+
+<div class="photo glass">foto1.jpg</div>
+<div class="photo glass">foto2.jpg</div>
+<div class="photo glass">foto3.jpg</div>
+<div class="photo glass">foto4.jpg</div>
+
+</div>
+
+</section>
+
+<section class="section reveal final">
+
+<div class="glass content">
+
+<h2>Para Sempre ❤️</h2>
+
+<br>
+
+<p>Maria Eliana,</p>
+
+<p>
+Você é minha companheira, minha melhor amiga,
+minha parceira de vida e meu lugar seguro.
+</p>
+
+<p>
+Sou grato por cada sorriso compartilhado,
+por cada desafio superado juntos
+e por cada sonho que ainda vamos realizar.
+</p>
+
+<p>Obrigado por acreditar em nós.</p>
+<p>Obrigado por caminhar ao meu lado.</p>
+<p>Obrigado por tornar minha vida muito mais feliz.</p>
+
+<p>
+Hoje, amanhã e todos os dias que vierem,
+escolho você.
+E escolheria de novo.
+Mil vezes.
+</p>
+
+<h3>❤️ Eu te amo ❤️</h3>
+
+<div class="signature">
+— Seu marido,<br>
+Thiago Morato
+</div>
+
+</div>
+
+</section>
+
+<footer>
+Feito com amor para Maria Eliana ❤️
+</footer>
+
+<script>
+
+function startExperience(){
+
+document.getElementById('intro').style.display='none';
+
+const music=document.getElementById('music');
+
+music.play().catch(()=>{});
+
+}
+
+function updateCounter(){
+
+const startDate=new Date('2024-05-30T00:00:00');
+const now=new Date();
+
+const diff=now-startDate;
+
+const days=Math.floor(diff/(1000*60*60*24));
+
+document.getElementById('counter').innerHTML=
+`Juntos há <strong>${days}</strong> dias ❤️`;
+
+}
+
+updateCounter();
+
+function createHeart(){
+
+const heart=document.createElement('div');
+
+heart.className='heart';
+
+heart.innerHTML='❤️';
+
+heart.style.left=Math.random()*100+'%';
+heart.style.fontSize=(15+Math.random()*30)+'px';
+heart.style.animationDuration=(6+Math.random()*8)+'s';
+
+document.getElementById('hearts').appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},14000);
+
+}
+
+setInterval(createHeart,250);
+
+const reveals=document.querySelectorAll('.reveal');
+
+function reveal(){
+
+reveals.forEach(el=>{
+
+const top=el.getBoundingClientRect().top;
+
+if(top < window.innerHeight-100){
+el.classList.add('active');
+}
+
+});
+
+}
+
+window.addEventListener('scroll',reveal);
+reveal();
+
+</script>
+
+</body>
+</html>
