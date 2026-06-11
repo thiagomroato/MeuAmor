@@ -8,19 +8,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
 
-html{
-scroll-behavior:smooth;
-}
-
+/* FUNDO MAIS ESCURO */
 body{
 font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+background:linear-gradient(135deg,#0b0b10,#1a0f13,#2a0f1f,#3a1226);
 color:#fff;
 overflow-x:hidden;
 }
@@ -35,7 +27,7 @@ justify-content:center;
 align-items:center;
 flex-direction:column;
 text-align:center;
-background:linear-gradient(135deg,#ff5f9e,#ff7eb3);
+background:linear-gradient(135deg,#2a0f1f,#ff4d88);
 padding:20px;
 }
 
@@ -63,9 +55,9 @@ transform:scale(1.05);
 
 /* GLASS */
 .glass{
-background:rgba(255,255,255,.12);
+background:rgba(255,255,255,.08);
 backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.25);
+border:1px solid rgba(255,255,255,.15);
 border-radius:28px;
 }
 
@@ -89,18 +81,14 @@ font-family:'Playfair Display',serif;
 font-size:clamp(3rem,8vw,6rem);
 }
 
-.hero h2{
-margin:15px 0;
-font-weight:400;
-}
-
 .counter{
 margin-top:25px;
 font-size:1.3rem;
 font-weight:700;
+color:#ff7aa2;
 }
 
-/* SECTIONS */
+/* SEÇÕES */
 .section{
 max-width:1200px;
 margin:auto;
@@ -109,40 +97,12 @@ padding:100px 20px;
 
 .section-title{
 text-align:center;
-margin-bottom:50px;
+margin-bottom:40px;
 }
 
 .section-title h2{
 font-family:'Playfair Display',serif;
 font-size:clamp(2rem,5vw,3rem);
-}
-
-/* TIMELINE */
-.timeline{
-position:relative;
-padding-left:50px;
-}
-
-.timeline:before{
-content:"";
-position:absolute;
-left:15px;
-top:0;
-width:4px;
-height:100%;
-background:white;
-opacity:.4;
-}
-
-.timeline-item{
-position:relative;
-margin-bottom:30px;
-}
-
-.timeline-item:before{
-content:"❤️";
-position:absolute;
-left:-40px;
 }
 
 /* CARDS */
@@ -155,33 +115,33 @@ gap:20px;
 .card{
 padding:25px;
 text-align:center;
-transition:.4s;
+transition:.3s;
 }
 
 .card:hover{
 transform:translateY(-8px);
 }
 
-/* GALLERY AJUSTADA */
+/* 📸 GALERIA AJUSTADA PERFEITAMENTE */
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
 }
 
 .photo-frame{
-height:360px;
-border-radius:25px;
+position:relative;
+width:100%;
+aspect-ratio:4/5;
+border-radius:22px;
 overflow:hidden;
-padding:10px;
-display:flex;
-align-items:center;
-justify-content:center;
+background:rgba(255,255,255,0.05);
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
 transition:.4s;
 }
 
 .photo-frame:hover{
-transform:translateY(-8px);
+transform:translateY(-8px) scale(1.02);
 }
 
 .photo-frame img{
@@ -189,12 +149,12 @@ width:100%;
 height:100%;
 object-fit:cover;
 object-position:center;
-border-radius:18px;
-transition:.4s;
+display:block;
+transition:.5s;
 }
 
 .photo-frame:hover img{
-transform:scale(1.05);
+transform:scale(1.08);
 }
 
 /* FINAL */
@@ -209,7 +169,7 @@ font-size:1.2rem;
 font-weight:600;
 }
 
-/* HEARTS */
+/* CORAÇÕES */
 .hearts{
 position:fixed;
 inset:0;
@@ -228,21 +188,12 @@ animation:fall linear forwards;
 100%{transform:translateY(110vh);opacity:0;}
 }
 
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0);
-}
-
 footer{
 text-align:center;
 padding:50px;
+opacity:0.7;
 }
+
 </style>
 </head>
 
@@ -251,41 +202,53 @@ padding:50px;
 <!-- INTRO -->
 <div id="intro">
 <h1>❤️ Feliz Dia dos Namorados ❤️</h1>
-<p>Uma pequena homenagem para nossa história</p>
-<button class="enter-btn" onclick="startExperience()">Entrar na nossa história</button>
+<p>Uma homenagem especial</p>
+<button class="enter-btn" onclick="start()">Entrar</button>
 </div>
 
-<!-- AUDIO -->
+<!-- ÁUDIO -->
 <audio id="music" loop>
 <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<!-- HEARTS -->
+<!-- CORAÇÕES -->
 <div class="hearts" id="hearts"></div>
 
 <!-- HERO -->
 <section class="hero">
 <div class="glass hero-card">
+
 <h1>Maria Eliana ❤️</h1>
-<h2>Para o amor da minha vida</h2>
-<p>Desde que você entrou na minha vida, tudo ganhou mais sentido ❤️</p>
+
+<p>Para o amor da minha vida</p>
+
+<p>
+Desde que você entrou na minha vida,
+tudo ganhou mais sentido ❤️
+</p>
+
 <div id="counter" class="counter"></div>
+
 </div>
 </section>
 
 <!-- HISTÓRIA -->
-<section class="section reveal">
-<div class="section-title"><h2>O Início de Tudo</h2></div>
+<section class="section">
+<div class="section-title">
+<h2>O Início de Tudo</h2>
+</div>
 
-<div class="glass" style="padding:35px; line-height:2;">
+<div class="glass" style="padding:30px; line-height:2;">
 Em 2022, nossos caminhos se cruzaram na Procter & Gamble em Manaus.<br><br>
-Entre conversas, sorrisos e momentos compartilhados, nasceu algo especial.
+Entre conversas e momentos simples, nasceu algo especial ❤️
 </div>
 </section>
 
 <!-- AMOR -->
-<section class="section reveal">
-<div class="section-title"><h2>Coisas que Amo em Você ❤️</h2></div>
+<section class="section">
+<div class="section-title">
+<h2>Coisas que Amo em Você ❤️</h2>
+</div>
 
 <div class="cards">
 <div class="glass card">Seu sorriso</div>
@@ -298,8 +261,10 @@ Entre conversas, sorrisos e momentos compartilhados, nasceu algo especial.
 </section>
 
 <!-- GALERIA -->
-<section class="section reveal">
-<div class="section-title"><h2>Nossas Memórias 📸</h2></div>
+<section class="section">
+<div class="section-title">
+<h2>Nossas Memórias 📸</h2>
+</div>
 
 <div class="gallery">
 
@@ -323,36 +288,43 @@ Entre conversas, sorrisos e momentos compartilhados, nasceu algo especial.
 </section>
 
 <!-- FINAL -->
-<section class="section reveal">
+<section class="section">
 <div class="glass final" style="padding:40px;">
 <h2>Para Sempre ❤️</h2>
-<p>
-Maria Eliana, você é meu amor, minha vida e meu lugar seguro.
-</p>
-<p>Hoje e sempre, escolho você ❤️</p>
+
+<p>Maria Eliana, você é meu amor ❤️</p>
+
+<p>Hoje e sempre, escolho você.</p>
 
 <div class="signature">
 — Seu marido, Thiago Morato
 </div>
+
 </div>
 </section>
 
-<footer>Feito com amor ❤️</footer>
+<footer>
+Feito com amor ❤️
+</footer>
 
 <script>
-function startExperience(){
+
+/* ENTRAR */
+function start(){
 document.getElementById('intro').style.display='none';
 document.getElementById('music').play().catch(()=>{});
 }
 
-/* contador */
+/* CONTADOR */
 const startDate=new Date('2024-05-30');
 const now=new Date();
 const diff=now-startDate;
 const days=Math.floor(diff/(1000*60*60*24));
-document.getElementById('counter').innerHTML=`Juntos há ${days} dias ❤️`;
 
-/* corações */
+document.getElementById('counter').innerHTML=
+`Juntos há ${days} dias ❤️`;
+
+/* CORAÇÕES */
 setInterval(()=>{
 const heart=document.createElement('div');
 heart.className='heart';
@@ -360,19 +332,12 @@ heart.innerHTML='❤️';
 heart.style.left=Math.random()*100+'%';
 heart.style.fontSize=(15+Math.random()*25)+'px';
 heart.style.animationDuration=(6+Math.random()*6)+'s';
+
 document.getElementById('hearts').appendChild(heart);
+
 setTimeout(()=>heart.remove(),12000);
 },250);
 
-/* reveal */
-const reveals=document.querySelectorAll('.reveal');
-window.addEventListener('scroll',()=>{
-reveals.forEach(el=>{
-if(el.getBoundingClientRect().top < window.innerHeight-100){
-el.classList.add('active');
-}
-});
-});
 </script>
 
 </body>
