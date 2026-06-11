@@ -197,7 +197,7 @@ object-fit:cover;
 
 .slide.active{
 display:block;
-animation:fade .6s ease;
+animation:fade .1s ease;
 }
 
 @keyframes fade{
@@ -459,7 +459,7 @@ showSlide(current);
 setInterval(()=>{
 current = (current + 1) % slides.length;
 showSlide(current);
-},4000);
+},2000);
   
 </script>
 
